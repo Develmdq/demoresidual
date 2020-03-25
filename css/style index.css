@@ -1,0 +1,148 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-image: url(../media/texture.jpg);
+	background-size: cover;
+	/* height: 100vmin; */
+}
+
+.containers {
+	display: grid;
+	grid-template-columns: 12.5% 25% 25% 25% 12.5%;
+	grid-template-rows: 25% 10% 10% 40% 15%;
+	grid-template-areas: 
+			            "video video video video video"
+			             "frase frase logo logo logo"
+			             "frase frase logo logo logo"
+			         " carousel carousel carousel carousel carousel"
+			                ". face you inst .";			
+	margin: 0;
+	padding: 0;
+	justify-items: center;
+	align-items: center;
+	grid-gap: 3px;
+}
+
+#video {
+	grid-area: video;
+	width: 100%;
+	margin: 0%;
+	padding: 0;
+	z-index: -1;
+	border-style: groove;
+}
+
+a{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#logo{
+	grid-area: logo;
+	margin-top: -10%;
+	padding: 0;
+	justify-self: center;
+	transition: transform,6s;
+}
+
+#frase{
+	grid-area: frase;
+	text-align: center;
+	color:darkgoldenrod;
+	font-size: 4vmin;
+	margin-right: -5%;
+}
+
+#carousel{
+	grid-area: carousel;
+	width: 90%;
+	border-style: groove;
+}
+
+#face{
+	grid-area: face;
+	transition: transform,2s;
+}
+
+#you{
+	grid-area: you;
+	transition: transform,2s;
+}
+
+#inst{
+	grid-area: inst;
+	transition: transform,2s;
+} 
+
+#face:hover, #you:hover, #inst:hover, #logo:hover{
+	opacity: 0;
+	transform: scale(2.2);
+}
+
+@font-face {
+	font-family:Archicoco;
+	src: url("../fonts/Archicoco.ttf")
+}
+
+@media (min-width:800px){ 
+	.containers {
+		display: grid;
+		grid-template-columns: 20% 20% 10% 10% 10% 30%;
+		grid-template-rows: 80% 20%;
+		grid-template-areas: 
+						    ". . . . . . "
+						    "logo frase face you inst carousel";			
+		margin: 0;
+		padding: 0;
+		justify-items: center;
+		align-items: center;
+		grid-gap: 3px;
+		width: 100%;
+		height: 100vh;
+	}
+
+	#frase{
+		grid-area: frase;
+		text-align: center;
+		color:darkgoldenrod;
+		font-size: 2vmin;
+		margin-right: 40%;
+		-webkit-text-stroke: 0.5px black;	
+		font-weight: bold;
+	}
+
+	#video {
+		position: absolute;
+		width: 100%;
+		max-height: 100%;
+		z-index: -1;
+		border-style: groove;
+	}
+
+	#carousel{
+		grid-area: carousel;
+		width: 30%;
+		border-style: groove;
+		transition: transform,3s;
+		margin-top: -10%;
+	}
+
+	#carousel:hover{
+		opacity: 10;
+		transform: scale(3);
+		margin-bottom: 60%;
+		margin-right: 40%;
+	}
+
+	#logo{
+		grid-area: logo;
+		padding: 0;
+		justify-self: center;
+		transition: transform,6s;
+		width: 80%;
+	}
+}

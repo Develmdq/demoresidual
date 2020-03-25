@@ -1,0 +1,104 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: url("../media/Fondo2.jpg");
+	margin:  0;
+	padding: 0;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size:180%;
+	background-color: black;
+	background-position: center top;	
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 15% 10% 50% 10% 15%;
+	grid-template-rows: 1fr 1.5fr 6fr 2.5fr 0.5fr;
+	grid-template-areas: 
+						   ". . . . ."
+						   ". . bI . ."
+	       	 "article article article article article"
+				"face face you inst inst";
+	margin: 0;
+	padding: 0;
+	justify-items: center;
+	align-items: center;
+	
+}
+
+#botonLogo {
+	grid-area: bI;
+	width: 50%;
+	justify-items: center;
+	align-items: center;
+	transition: transform,3s;
+}
+
+.article {
+	grid-area: article;
+	text-align: center;
+	font-size: 4vmin;
+	margin: 1%;
+	color: rgb(0, 0, 0);
+	margin-bottom: 5%;
+}
+ 
+#face{
+	grid-area: face;
+	transition: transform,2s;
+	margin-bottom: -10%;
+}
+
+#you{
+	grid-area: you;
+	transition: transform,2s;
+	margin-bottom: -10%;
+}
+
+#inst{
+	grid-area: inst;
+	transition: transform,2s;
+	margin-bottom: -10%;
+} 
+
+#face:hover, #you:hover, #inst:hover, #botonLogo:hover{
+	opacity: 0;
+	transform: scale(2.2);
+}
+
+a{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@font-face {
+	font-family:Archicoco;
+	src: url("../fonts/Archicoco.ttf")
+}
+
+@media (min-width:800px){ 
+	
+	body {
+		background-size:45%;		
+	}
+
+	#botonLogo {
+		grid-area: bI;
+		width: 10%;
+	}
+
+	.article {
+		font-size: 2vmin;
+		margin-bottom: 10%;
+	}
+
+	#face #you #inst{
+		margin-bottom: -30%;
+	}
+}
+
